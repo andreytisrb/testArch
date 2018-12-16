@@ -1,4 +1,4 @@
-package nikan.sravni.ru.domain;
+package nikan.sravni.ru.exchangerate;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("nikan.sravni.ru.domain.test", appContext.getPackageName());
+        assertEquals("nikan.sravni.ru.exchangerate.test", appContext.getPackageName());
     }
 }
