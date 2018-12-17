@@ -40,6 +40,17 @@ class ExchangeRateViewModelTest {
 
         viewModel.excangeRates.test().assertValue(listOfRates.map { ExcangeRatesForView(it.code, it.name, it.curRate) })
 
+    }
+
+    @Test
+    fun `refresh test`(){
+        `viewModel inition test`()
+        val listOfRates = listOf(Rate("1", "En", 1.3f))
+        `when`(interactor.rateList).thenReturn(
+            Observable.just(listOfRates)
+        )
+        viewModel.refresh()
+        viewModel.excangeRates.test().assertValue(listOfRates.map { ExcangeRatesForView(it.code, it.name, it.curRate) })
 
     }
 

@@ -13,7 +13,7 @@ interface IExchangeRateViewModel{
     fun refresh()
 }
 
-class ExchangeRateViewModel() : ViewModel(), IExchangeRateViewModel {
+class ExchangeRateViewModel : ViewModel(), IExchangeRateViewModel {
 
     private lateinit var exchangeRateInteractor: IRateInteractor
     private var subscription: Disposable? = null
@@ -27,7 +27,7 @@ class ExchangeRateViewModel() : ViewModel(), IExchangeRateViewModel {
     override fun refresh() {
         subscription?.dispose()
         subscription = exchangeRateInteractor.rateList.subscribe {
-            excangeRates.value = it.map { ExcangeRatesForView(it.code, it.name, it.curRate) }
+            excangeRates.value = it.map { ExcangeRatesForView(it) }
         }
     }
 }
