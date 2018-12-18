@@ -6,12 +6,18 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+
+    dataBinding{
+        enabled true
+    }
+
     defaultConfig {
         applicationId "nikan.sravni.ru.sampleapp"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -29,9 +35,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.github.salomonbrys.kodein:kodein:3.4.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.salomonbrys.kodein:kodein:4.1.0'
+    implementation project(path: ':monomod')
+
 }
