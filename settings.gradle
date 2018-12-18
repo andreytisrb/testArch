@@ -1,1 +1,1 @@
-include ':app', ':domain', ':repository', ':network', ':exchangerate'
+include ':app', ':monomod'
