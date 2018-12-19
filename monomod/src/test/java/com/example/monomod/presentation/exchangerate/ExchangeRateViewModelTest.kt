@@ -34,11 +34,11 @@ class ExchangeRateViewModelTest {
             Observable.just(listOfRates)
         )
 
-        viewModel.excangeRates.test().assertNoValue()
+        viewModel.rate.test().assertNoValue()
 
         viewModel.init(interactor)
 
-        viewModel.excangeRates.test().assertValue(listOfRates.map { ExcangeRatesForView(it.code, it.name, it.curRate) })
+        viewModel.rate.test().assertValue(listOfRates.map { RateForView(it.code, it.name, it.curRate) })
 
     }
 
@@ -50,7 +50,7 @@ class ExchangeRateViewModelTest {
             Observable.just(listOfRates)
         )
         viewModel.refresh()
-        viewModel.excangeRates.test().assertValue(listOfRates.map { ExcangeRatesForView(it.code, it.name, it.curRate) })
+        viewModel.rate.test().assertValue(listOfRates.map { RateForView(it.code, it.name, it.curRate) })
 
     }
 

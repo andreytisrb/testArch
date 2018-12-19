@@ -24,10 +24,5 @@ fun getMonomodKodein(appInfo: AppInfo) = Kodein.Module {
     import(provideInteractor())
     import(provideRepository())
 
-//    if(appInfo.buildVariant.contains("Stub"))
-        import(provideStubDep())
-//    else
-//        import(provideWebDep())
-
 
 }

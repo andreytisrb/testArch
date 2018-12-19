@@ -7,7 +7,7 @@ import com.example.monomod.domain.exchangerate.IRateInteractor
 import io.reactivex.disposables.Disposable
 
 interface IExchangeRateViewModel{
-    val excangeRates: LiveData<List<ExcangeRatesForView>>
+    val rate: LiveData<List<RateForView>>
     fun init(exchangeRateIntercator: IRateInteractor)
     fun refresh()
 }
@@ -22,11 +22,11 @@ class ExchangeRateViewModel : ViewModel(), IExchangeRateViewModel {
         refresh()
     }
 
-    override val excangeRates = MutableLiveData<List<ExcangeRatesForView>>()
+    override val rate = MutableLiveData<List<RateForView>>()
     override fun refresh() {
         subscription?.dispose()
         subscription = exchangeRateInteractor.rateList.subscribe {listRate->
-            excangeRates.value = listRate.map { ExcangeRatesForView(it) }
+            rate.value = listRate.map { RateForView(it) }
         }
     }
 }
