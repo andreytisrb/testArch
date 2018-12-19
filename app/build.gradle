@@ -22,12 +22,22 @@ android {
     }
     buildTypes {
         debug{
-
-        }
-        release {
             minifyEnabled false
+            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "link"
+
+    productFlavors{
+        prodLink
+        sampleLink
+        mockLink
     }
 }
 
