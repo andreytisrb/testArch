@@ -7,7 +7,6 @@ import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.singleton
 
-
 fun provideInteractor() = Kodein.Module{
     bind<IRateInteractor>() with singleton { RateInteractor(instance()) }
 }

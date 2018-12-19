@@ -8,12 +8,10 @@ import com.github.salomonbrys.kodein.factory
 import com.github.salomonbrys.kodein.singleton
 import retrofit2.Retrofit
 
-
-fun provideStubDep() = Kodein.Module{
-    bind<IRateClient>(tag = "stub") with singleton { RateClientStub() }
+fun provideStubDep() = Kodein.Module {
+    bind<IRateClient>() with singleton { RateClientStub() }
 }
 
-fun provideWebDep() = Kodein.Module{
-    bind<IRateClient>(tag = "stub") with factory { retrofit:Retrofit -> RateClientStub() }
-
+fun provideWebDep() = Kodein.Module {
+    bind<IRateClient>() with factory { retrofit: Retrofit -> RateClientStub() }
 }
