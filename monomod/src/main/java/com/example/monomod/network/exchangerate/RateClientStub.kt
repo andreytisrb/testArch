@@ -4,7 +4,7 @@ import com.example.monomod.domain.exchangerate.entity.Rate
 import com.example.monomod.repository.exchangerate.IRateClient
 import io.reactivex.Observable
 
-class RateClientStub(): IRateClient {
+class RateClientStub: IRateClient {
     override val rateList: Observable<List<Rate>>
-        get() = Observable.just(listOf(Rate("Ru","Ruble", 3.3f)))
+        get() = Observable.just(listOf(Rate("Ru","Ruble", 3.3f), Rate("Eur","Euro", 65.8f)))
 }

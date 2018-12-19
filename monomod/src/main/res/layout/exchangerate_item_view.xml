@@ -5,15 +5,18 @@
     </data>
     <LinearLayout android:orientation="vertical"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+                  android:layout_height="wrap_content">
 
         <TextView
-                android:text="TextView"
+                android:text="@{rate.name}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"/>
+
         <TextView
-                android:text="TextView"
+                android:text="@{rate.code}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"/>
     </LinearLayout>
 </layout>

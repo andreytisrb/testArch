@@ -14,8 +14,10 @@
                 app:layout_constraintBottom_toTopOf="@+id/tvMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:rateList = "@{viewModel.rate}"
-/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                app:reverseLayout="true"
+                app:rateList="@{viewModel.rate}"/>
 
         <TextView
                 android:id="@+id/tvMessage"
