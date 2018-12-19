@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="viewModel" type="com.example.monomod.presentation.exchangerate.IExchangeRateViewModel"/>
     </data>
@@ -10,6 +10,7 @@
             android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/rvExchange"
                 app:layout_constraintBottom_toTopOf="@+id/tvMessage"
                 android:layout_width="match_parent"
