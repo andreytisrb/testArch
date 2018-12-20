@@ -3,8 +3,8 @@
     <data>
         <variable name="rate" type="com.example.monomod.presentation.exchangerate.RateForView"/>
     </data>
-    <LinearLayout android:orientation="vertical"
-                  android:layout_width="match_parent"
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content">
 
         <TextView
@@ -14,7 +14,7 @@
                 android:id="@+id/textView"/>
 
         <TextView
-                android:text="@{rate.code}"
+                android:text="@{rate.curRate}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"/>
