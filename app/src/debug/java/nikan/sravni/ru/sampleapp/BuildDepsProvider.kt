@@ -9,4 +9,3 @@ import okhttp3.logging.HttpLoggingInterceptor
 val buildTypeKodeinModule = Kodein.Module {
             bind<Interceptor>() with provider { HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }}
         }
-пше
