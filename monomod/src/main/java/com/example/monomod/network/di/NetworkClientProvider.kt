@@ -21,8 +21,8 @@ fun provideWebDep() = Kodein.Module {
 
     bind<OkHttpClient>() with singleton {
         OkHttpClient.Builder()
-            .addInterceptor( HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
-            .callTimeout(60, TimeUnit.SECONDS)
+            .addInterceptor( instance())
+            .callTimeout(instance("timeout"), TimeUnit.SECONDS)
             .build()
 
     }

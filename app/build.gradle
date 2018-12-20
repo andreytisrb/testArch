@@ -5,12 +5,18 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key1'
+            keyPassword 'testKey123'
+            storeFile file('/Users/andrey.tishchenko/data/Projects/StudyProjects/testArch/testKey')
+            storePassword 'testKey123'
+        }
+    }
     compileSdkVersion 28
-
-    dataBinding{
+    dataBinding {
         enabled true
     }
-
     defaultConfig {
         applicationId "nikan.sravni.ru.sampleapp"
         minSdkVersion 19
@@ -21,7 +27,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        debug{
+        debug {
             minifyEnabled true
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -29,12 +35,11 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
-
     flavorDimensions "link"
-
-    productFlavors{
+    productFlavors {
         prodLink
         sampleLink
         mockLink
@@ -49,7 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
     implementation 'com.github.salomonbrys.kodein:kodein:4.1.0'
     implementation project(path: ':monomod')
-
 }
