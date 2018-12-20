@@ -1,12 +1,13 @@
-package com.example.monomod.presentation.exchangerate
+package com.example.monomod.presentation.exchangerate.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monomod.R
 import com.example.monomod.databinding.ExchangerateItemViewBinding
+import com.example.monomod.presentation.exchangerate.viewdata.RateForView
+
 
 class RateAdapter(val rateList: List<RateForView>) : RecyclerView.Adapter<RateViewHolder>() {
 

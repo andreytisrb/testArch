@@ -1,11 +1,10 @@
-package com.example.monomod.presentation.exchangerate
+package com.example.monomod.presentation.exchangerate.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.example.monomod.R
 import com.example.monomod.databinding.ExchangeRateFragmentBinding
 import com.example.monomod.di.IMonomodKodeinProvider

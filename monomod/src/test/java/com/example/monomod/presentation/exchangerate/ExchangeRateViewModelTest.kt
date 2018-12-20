@@ -2,8 +2,12 @@ package com.example.monomod.presentation.exchangerate
 
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.example.monomod.RxImmediateSchedulerRule
 import com.example.monomod.domain.exchangerate.IRateInteractor
 import com.example.monomod.domain.exchangerate.entity.Rate
+import com.example.monomod.presentation.exchangerate.viewdata.RateForView
+import com.example.monomod.presentation.exchangerate.viewmodel.ExchangeRateViewModel
+import com.example.monomod.presentation.exchangerate.viewmodel.IExchangeRateViewModel
 import com.jraska.livedata.test
 import io.reactivex.Observable
 import org.junit.Before
@@ -11,6 +15,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
+import io.reactivex.schedulers.Schedulers
+import io.reactivex.android.plugins.RxAndroidPlugins
+import org.junit.BeforeClass
+
 
 class ExchangeRateViewModelTest {
 
@@ -19,6 +27,10 @@ class ExchangeRateViewModelTest {
 
     @get:Rule
     val testRule = InstantTaskExecutorRule()
+
+    @Rule @JvmField var testSchedulerRule = RxImmediateSchedulerRule()
+
+
 
     @Before
     fun init(){
@@ -38,7 +50,9 @@ class ExchangeRateViewModelTest {
 
         viewModel.init(interactor)
 
-        viewModel.rate.test().assertValue(listOfRates.map { RateForView(it.code, it.name, it.curRate) })
+        viewModel.rate.test().assertValue(listOfRates.map {
+            RateForView(it)
+        })
 
     }
 
@@ -50,7 +64,9 @@ class ExchangeRateViewModelTest {
             Observable.just(listOfRates)
         )
         viewModel.refresh()
-        viewModel.rate.test().assertValue(listOfRates.map { RateForView(it.code, it.name, it.curRate) })
+        viewModel.rate.test().assertValue(listOfRates.map {
+            RateForView(it)
+        })
 
     }
 

@@ -2,9 +2,7 @@ package nikan.sravni.ru.sampleapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.monomod.presentation.exchangerate.ExchangeRateFragment
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.bind
+import com.example.monomod.presentation.exchangerate.view.ExchangeRateFragment
 
 class MainActivity : AppCompatActivity() {
 

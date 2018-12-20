@@ -1,5 +1,6 @@
-package com.example.monomod.network.exchangerate
+package com.example.monomod.network.exchangerate.proto
 
+import com.example.monomod.network.exchangerate.proto.Valute
 import com.google.gson.annotations.SerializedName
 
 data class RateWebClass(

@@ -1,4 +1,4 @@
-package com.example.monomod.presentation.exchangerate
+package com.example.monomod.presentation.exchangerate.viewdata
 
 import com.example.monomod.domain.exchangerate.entity.Rate
 

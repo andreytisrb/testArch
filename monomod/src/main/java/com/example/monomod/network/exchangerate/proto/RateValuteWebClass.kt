@@ -1,4 +1,4 @@
-package com.example.monomod.network.exchangerate
+package com.example.monomod.network.exchangerate.proto
 
 import com.google.gson.annotations.SerializedName
 

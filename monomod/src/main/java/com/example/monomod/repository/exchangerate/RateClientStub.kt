@@ -1,4 +1,4 @@
-package com.example.monomod.network.exchangerate
+package com.example.monomod.repository.exchangerate
 
 import com.example.monomod.domain.exchangerate.entity.Rate
 import com.example.monomod.repository.exchangerate.IRateClient

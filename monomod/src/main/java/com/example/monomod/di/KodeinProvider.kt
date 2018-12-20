@@ -12,12 +12,6 @@ interface IMonomodKodeinProvider {
 }
 
 fun getMonomodKodein(appInfo: AppInfo) = Kodein.Module {
-    bind<Retrofit>() with provider {
-        Retrofit.Builder()
-            .client(instance())
-            .baseUrl(instance<String>("baseUrl"))
-            .build()
-    }
 
     bind<AppInfo>() with singleton { appInfo }
 
